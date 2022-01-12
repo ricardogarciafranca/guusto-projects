@@ -5,7 +5,7 @@ FROM maven:3.6.0-jdk-8-slim AS build
 
 COPY pom.xml .
 
-RUN mvn clean package
+RUN mvn clean install
 
 #
 # Package stage
