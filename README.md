@@ -13,3 +13,12 @@ Guusto projects
 
     http://localhost:8080/swagger-ui.html
 
+### FRONT-END
+    
+    /guusto-app -> npm install
+    
+    /guusto-app -> ng serve
+    
+    http://localhost:4200/
+    
+
