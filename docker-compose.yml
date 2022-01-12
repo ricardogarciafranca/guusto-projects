@@ -10,6 +10,8 @@ services:
     build:
       context: ./guusto-api
     container_name: guusto-api
+    environment:
+        SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
     depends_on:
       - postgres
 
