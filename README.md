@@ -3,8 +3,13 @@ Guusto projects
 
 ### DOCKER COMPOSE
 
-    docker-compose up
+    docker-compose up --build
     
 ### SPRING-SECURITY
     
     User= user, Password = Show in console "Using generated security password: ***"
+
+### SWAGGER 
+
+    http://localhost:8080/swagger-ui.html
+
