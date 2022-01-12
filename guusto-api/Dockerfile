@@ -1,5 +1,7 @@
-FROM openjdk
+FROM openjdk:8-jdk-alpine
 
-RUN mkdir -p ./deployments
+ARG JAR_FILE=target/*.jar
 
-ENV APP_NAME
+COPY ${JAR_FILE} app.jar
+
+ENTRYPOINT ["java","-jar","/app.jar"]
