@@ -17,7 +17,7 @@ Guusto projects
     
     /guusto-app -> npm install
     
-    /guusto-app -> ng serve
+    /guusto-app -> npm start
     
     http://localhost:4200/
     
