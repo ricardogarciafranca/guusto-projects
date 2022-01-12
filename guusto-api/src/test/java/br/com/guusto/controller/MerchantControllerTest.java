@@ -76,6 +76,24 @@ public class MerchantControllerTest extends BaseTest {
 		Assert.assertEquals(
 				actual.stream().filter(a -> a.getName().equals(airbnbUsa.getName())).findFirst().isPresent(), true);
 	}
+	
+	@Test
+	public void findMerchantsByNameNotFoundTest() throws Exception {
+
+		Merchant airbnbUsa = merchantTemplate.getAirbnbUsa();
+
+		when(merchantRespository.findByName(any())).thenReturn(Arrays.asList(airbnbUsa));
+
+		final MvcResult mvcResult = mvc.perform(
+				MockMvcRequestBuilders.get(BASE_URL + "/name/x").contentType(MediaType.APPLICATION_JSON_VALUE))
+				.andExpect(status().isOk()).andReturn();
+
+		List<MerchantDto> actual = mapper.readValue(mvcResult.getResponse().getContentAsString(),
+				new TypeReference<List<MerchantDto>>() {
+				});
+
+		Assert.assertEquals(0, actual.size());
+	}
 
 	@Test
 	public void findMerchantsByCountryFoundTest() throws Exception {
@@ -96,6 +114,25 @@ public class MerchantControllerTest extends BaseTest {
 
 		Assert.assertEquals(
 				actual.stream().filter(a -> a.getName().equals(amazonCan.getName())).findFirst().isPresent(), true);
+	}
+	
+	@Test
+	public void findMerchantsByCountryNotFoundTest() throws Exception {
+
+		Merchant amazonCan = merchantTemplate.getAmazonCan();
+
+		when(merchantRespository.findByCountry(any())).thenReturn(Arrays.asList(amazonCan));
+
+		final MvcResult mvcResult = mvc.perform(
+				MockMvcRequestBuilders.get(BASE_URL + "/country/y").contentType(MediaType.APPLICATION_JSON_VALUE))
+				.andExpect(status().isOk()).andReturn();
+
+		List<MerchantDto> actual = mapper.readValue(mvcResult.getResponse().getContentAsString(),
+				new TypeReference<List<MerchantDto>>() {
+				});
+
+		Assert.assertEquals(0, actual.size());
+
 	}
 
 }
