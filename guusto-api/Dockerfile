@@ -5,10 +5,10 @@ FROM maven:3.6.0-jdk-8-slim AS build
 
 COPY pom.xml .
 
-RUN mvn clean install
+RUN mvn clean package
 
 #
-# Run stage
+# Package stage
 #
 FROM openjdk:8-jdk-alpine
 
