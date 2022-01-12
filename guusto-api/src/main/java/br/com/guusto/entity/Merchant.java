@@ -30,7 +30,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @TypeDef(name = "json", typeClass = JsonType.class)
 @Entity
-@Table(name = "merchant")
+@Table(name = "tb_merchant")
 @SequenceGenerator(sequenceName = "tb_merchant_id_merchant_seq", name = "id_merchant", allocationSize = 1)
 public class Merchant implements Serializable {
 
