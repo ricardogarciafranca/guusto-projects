@@ -1,8 +1,9 @@
-version: '3'
+version: '3.6'
 
 services:
-  postgres-compose:
+  postgres:
     image: postgres
+    restart: always
     environment:
       POSTGRES_PASSWORD: "admin"
     ports:
@@ -10,4 +11,4 @@ services:
     expose:
       - "5432"
     volumes:
-    - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    - ./scripts/data.sql:/docker-entrypoint-initdb.d/10-init.sql
