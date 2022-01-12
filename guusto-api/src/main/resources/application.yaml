@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: Guusto
+    version: '@project.version@'
+  main:
+    banner-mode: 'off'
+  jackson:
+    default-property-inclusion: non_null
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+          format_sql: true
+          show-sql: true
+  datasource:
+    url: 'jdbc:postgresql://localhost:5432/postgres'
+    username: postgres
+    password: admin
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hikari:
+      connectionTimeout: 20000
+      maximumPoolSize: 5
+      connection-init-sql: SET TIME ZONE 'Canada/Central'
