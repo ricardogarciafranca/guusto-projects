@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.guusto.dto.MerchantDto;
+import br.com.guusto.exceptions.BusinessException;
+import br.com.guusto.exceptions.NotFoundException;
 import br.com.guusto.service.MerchantService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -31,13 +33,13 @@ public class MerchantController {
 
 	@ApiOperation(value = "Find merchants by name ")
 	@RequestMapping(value = "/name/{name}", produces = "application/json", method = RequestMethod.GET)
-	public ResponseEntity<List<MerchantDto>> findByName(@PathVariable final String name) {
+	public ResponseEntity<List<MerchantDto>> findByName(@PathVariable(name = "name", required = true) final String name) throws BusinessException {
 		return ResponseEntity.ok(merchantService.findByName(name));
 	}
 
 	@ApiOperation(value = "Find merchants by country ")
 	@RequestMapping(value = "/country/{country}", produces = "application/json", method = RequestMethod.GET)
-	public ResponseEntity<List<MerchantDto>> findByCountry(@PathVariable final String country) {
+	public ResponseEntity<List<MerchantDto>> findByCountry(@PathVariable(name = "country", required = true) final String country) throws NotFoundException{
 		return ResponseEntity.ok(merchantService.findByCountry(country));
 	}
 

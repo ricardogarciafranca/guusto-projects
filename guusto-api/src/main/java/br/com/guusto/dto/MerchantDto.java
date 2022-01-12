@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-import br.com.guusto.enums.Country;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,6 +22,6 @@ public class MerchantDto {
 	private List<Integer> denominations;
 	private String website;
 	private String image;
-	private Country country;
+	private String country;
 
 }
