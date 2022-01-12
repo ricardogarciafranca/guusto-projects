@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {environment} from "../environments/environment";
 
 
 @Component({
@@ -10,11 +11,11 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 export class AppComponent {
   title = 'guusto-app';
 
-  private headers = new HttpHeaders({'Content-Type': 'application/json'});
+  private headers = new HttpHeaders({'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'});
 
   constructor(private http: HttpClient) {
 
-    const req = this.http.get('http://localhost:8080/merchants', {headers: this.headers}).subscribe(data => {
+    const req = this.http.get(environment.api, {headers: this.headers}).subscribe(data => {
 
     }, (error) => {
 
