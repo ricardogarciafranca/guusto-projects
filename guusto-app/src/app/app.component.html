@@ -47,8 +47,32 @@
   </div>
 
   <!-- Resources -->
-  <h2>Resources</h2>
-  <p>Here are some links to help you get started:</p>
+
+  <h4>All Merchants</h4>
+  <table border="1rem">
+  <tr *ngFor="let merchant of merchants">
+    <td> <img src="{{merchant.image}}" width="25rem" height="25rem"> </td> <td>{{merchant.name}} </td>
+  </tr>
+  </table>
+
+  <br/>
+
+
+  <h4>Merchants by name = 'Amazon'</h4>
+  <table border="1rem">
+  <tr *ngFor="let merchant of merchantsName">
+    <td> <img src="{{merchant.image}}" width="25rem" height="25rem"> </td> <td align="center">{{merchant.name}} </td>
+  </tr>
+  </table>
+
+  <br/>
+
+  <h4>Merchants by country = 'Estados Unidos'</h4>
+  <table border="1rem">
+    <tr *ngFor="let merchant of merchantsCountry">
+      <td> <img src="{{merchant.image}}" width="25rem" height="25rem"> </td> <td>{{merchant.name}} </td>
+    </tr>
+  </table>
 
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  api: 'http://localhost:4200/api/merchants'
+  api: 'http://localhost:4200/api/merchants',
+  login: 'http://localhost:8080/login'
 };
 
 /*
