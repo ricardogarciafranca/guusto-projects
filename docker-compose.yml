@@ -1,8 +1,21 @@
 version: '3.6'
 
 services:
+  guusto-api:
+    image: guusto/merchant-api
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+    build:
+      context: ./guusto-api
+    container_name: guusto-api
+    depends_on:
+      - postgres
+
   postgres:
     image: postgres
+    container_name: postgres
     restart: always
     environment:
       POSTGRES_PASSWORD: "admin"
@@ -12,3 +25,5 @@ services:
       - "5432"
     volumes:
     - ./scripts/data.sql:/docker-entrypoint-initdb.d/10-init.sql
+
+

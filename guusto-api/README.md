@@ -17,3 +17,7 @@
 ### DOCKER RUN
 
     docker run guusto/merchant-api .
+    
+### SPRING-SECURITY
+    
+    User= user, Password = Show in console "Using generated security password: ***"
