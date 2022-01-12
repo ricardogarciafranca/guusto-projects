@@ -9,3 +9,11 @@
 ### SWAGGER 
 
     http://localhost:8080/swagger-ui.html
+    
+### DOCKER BUILD
+
+	build: docker build -t guusto/merchant-api .
+	
+### DOCKER RUN
+
+    docker run guusto/merchant-api .
