@@ -1,60 +1,62 @@
-# guusto-projects
-Guusto projects
+# Guusto
 
-### DOCKER COMPOSE
+Merchants API
 
-    docker-compose up --build
-    
-### SPRING-SECURITY
-    
-    User= user, Password = Show in console "Using generated security password: ***"
+## Docker Compose
 
-### SWAGGER 
+Este comando, irá empacotar o projeto, subir o banco de dados, pré-carregar informações na base, em seguida rodar o projeto.
 
-    http://localhost:8080/swagger-ui.html
+```bash
+docker-compose up --build
+```
 
-### FRONT-END
-    
-    /guusto-app -> npm install
-    
-    /guusto-app -> npm start
-    
-    http://localhost:4200/
-    
+## Swagger
 
+Todas as Api's podem ser vistas e simuladas neste endereço
 
-##
+```bash
+http://localhost:8080/swagger-ui.html
+```
 
-Linguagem:
-Java
+## Spring Secutiry
 
-Frameworks utilizados:
-SpringBoot,
-SpringData JPA
-SpringTest
-SpringSecurity
-SpringWeb
+Acesso default spring-security, usuario e senha gerados automaticamente. Senha pode ser vista no console da aplicação,é alterada em todo boot. Usuário sempre permanecerá o mesmo, {user}.
 
+```bash
+User= user, Password = Show in console "Using generated security password: ***"
+```
+
+## Front End
+
+```python
+/guusto-app -> npm install
+/guusto-app -> npm start
+http://localhost:4200/
+```
+
+## Tecnologias utilizadas
+
+```python
+Linguagem:  
+  Java
+  
+Frameworks:
+  SpringBoot,
+  SpringData JPA
+  SpringTest
+  SpringSecurity
+  SpringWeb
+  
 Base de dados:
-Postgres
+  Postgres
 
 Container:
-Docker
-DockerCompose
+  Docker
+  DockerCompose
 
-FrontEnd:
-Angular
+FrontEnd: 
+  Angular
+```
 
-obs. Para subir o projeto, basta acessar a raiz, em guusto-projects, e executar:
 
-docker-compose up --build, este comando, irá empacotar o projeto, subir o banco de dados, pré-carregar informações na base, em seguida rodar o projeto.
-
-Para o frontEnd basta acessar a raiz do projeto front e rodar npm install && npm start.
-
-Ao acessar o frontend a primeira vez, será solicitado usuário e senha: 
-
-Usuario: user
-A Senha, pode ser vista no console da aplicação, ela é alterada a cada boot.
-
-Para visualizar todas as apis da aplicação e executá-las, independente do front, pode ser feito via swagger: http://localhost:8080/swagger-ui.html
 
