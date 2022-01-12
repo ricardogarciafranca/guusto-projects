@@ -4,6 +4,7 @@ import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.any;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -80,9 +81,7 @@ public class MerchantControllerTest extends BaseTest {
 	@Test
 	public void findMerchantsByNameNotFoundTest() throws Exception {
 
-		Merchant airbnbUsa = merchantTemplate.getAirbnbUsa();
-
-		when(merchantRespository.findByName(any())).thenReturn(Arrays.asList(airbnbUsa));
+		when(merchantRespository.findByName(any())).thenReturn(new ArrayList<Merchant>());
 
 		final MvcResult mvcResult = mvc.perform(
 				MockMvcRequestBuilders.get(BASE_URL + "/name/x").contentType(MediaType.APPLICATION_JSON_VALUE))
@@ -119,9 +118,7 @@ public class MerchantControllerTest extends BaseTest {
 	@Test
 	public void findMerchantsByCountryNotFoundTest() throws Exception {
 
-		Merchant amazonCan = merchantTemplate.getAmazonCan();
-
-		when(merchantRespository.findByCountry(any())).thenReturn(Arrays.asList(amazonCan));
+		when(merchantRespository.findByCountry(any())).thenReturn(new ArrayList<Merchant>());
 
 		final MvcResult mvcResult = mvc.perform(
 				MockMvcRequestBuilders.get(BASE_URL + "/country/y").contentType(MediaType.APPLICATION_JSON_VALUE))
