@@ -30,17 +30,13 @@ export class AppComponent {
     this.http.get(environment.api + '/name/amazon', {headers: this.headers}).subscribe(data => {
       this.merchantsName = data;
     }, (error) => {
-      if(error.url.includes('login')) {
-        window.open(environment.login);
-      }
+        console.log(error);
     });
 
     this.http.get(environment.api + '/country/usa', {headers: this.headers}).subscribe(data => {
       this.merchantsCountry = data;
     }, (error) => {
-      if(error.url.includes('login')) {
-        window.open(environment.login);
-      }
+        console.log(error);
     });
 
   }
