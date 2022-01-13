@@ -50,7 +50,7 @@ Frameworks:
 Base de dados:
   Postgres
 
-Container:
+Devops:
   Docker
   DockerCompose
 
